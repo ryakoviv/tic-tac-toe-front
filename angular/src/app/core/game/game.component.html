@@ -1,0 +1,17 @@
+<div class="board" [ngClass]="{'disabled': isBoardDisabled()}">
+  <div class="row">
+    <ng-template ngFor let-item [ngForOf]="getBoardAsArray()| slice:0:3" let-i="index">
+      <app-cell (click)="onCellClick(board[i], i)" [value]="board[i]"></app-cell>
+    </ng-template>
+  </div>
+  <div class="row">
+    <ng-template ngFor let-item [ngForOf]="getBoardAsArray()| slice:3:6" let-i="index">
+      <app-cell (click)="onCellClick(board[i+3], i+3)" [value]="board[i+3]"></app-cell>
+    </ng-template>
+  </div>
+  <div class="row">
+    <ng-template ngFor let-item [ngForOf]="getBoardAsArray()| slice:6:9" let-i="index">
+      <app-cell (click)="onCellClick(board[i+6], i+6)" [value]="board[i+6]"></app-cell>
+    </ng-template>
+  </div>
+</div>

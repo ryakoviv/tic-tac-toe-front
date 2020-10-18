@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+    angular-nginx:
+        container_name: angular-nginx
+        build:
+            context: .
+            dockerfile: nginx/Dockerfile
+        ports:
+            - "89:80"
